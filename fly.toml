@@ -1,9 +1,26 @@
-app = "anime-suggestions"
-primary_region = "ams"
+# fly.toml app configuration file generated for anime-suggestions-x6eg5q on 2026-10-31T15:24:34Z
+#
+# See https://fly.io/docs/reference/configuration/ for information about how to use this file.
+#
+
+app = 'anime-suggestions-x6eg5q'
+primary_region = 'cdg'
 
 [build]
 
-[env]
-
 [processes]
-app = "python bot.py"
+  app = 'python bot.py'
+
+[http_service]
+  internal_port = 8080
+  force_https = true
+  auto_stop_machines = 'stop'
+  auto_start_machines = true
+  min_machines_running = 0
+  processes = ['app']
+
+[[vm]]
+  memory = '1gb'
+  cpu_kind = 'shared'
+  cpus = 1
+  memory_mb = 1024
