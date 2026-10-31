@@ -1,9 +1,17 @@
-app = "anime-suggestions"
+app = "anime-suggestions-x6eg5q"
 primary_region = "ams"
 
 [build]
 
-[env]
+[http_service]
+  internal_port = 10000
+  force_https = true
+  auto_stop_machines = "off"
+  auto_start_machines = true
+  min_machines_running = 1
+  processes = ["app"]
 
-[processes]
-app = "python bot.py"
+[[vm]]
+  cpu_kind = "shared"
+  cpus = 1
+  memory_mb = 512
