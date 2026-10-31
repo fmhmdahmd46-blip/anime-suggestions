@@ -1,13 +1,14 @@
 app = "anime-suggestions-x6eg5q"
 primary_region = "ams"
 
+auto_stop_machines = false
+auto_start_machines = true
+min_machines_running = 1
+
 [build]
+  dockerfile = "Dockerfile"
 
 [[vm]]
   cpu_kind = "shared"
   cpus = 1
   memory_mb = 256
-  memory = "256mb"
-
-[processes]
-  app = "python bot.py"
