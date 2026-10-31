@@ -1,0 +1,9 @@
+app = "anime-suggestions"
+primary_region = "ams"
+
+[build]
+
+[env]
+
+[processes]
+app = "python bot.py"
